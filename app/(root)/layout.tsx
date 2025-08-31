@@ -11,7 +11,7 @@ const Layout = async ({ children }: { children: ReactNode }) => {
 
   return (
     <div className="root-layout">
-        <nav className="border-t border-black p-0 m-0">
+        <nav className=" p-0 m-0">
             <div className="-mt-12"> {/* Push content 3rem (48px) up */}
                 <Link href="#" className="flex items-center gap-2">
                     <Image src="/NEWLOGOGOLD.png" alt="MockMate Logo" width={210} height={22} />
