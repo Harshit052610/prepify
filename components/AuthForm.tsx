@@ -102,7 +102,7 @@ const AuthForm = ({ type }: { type: FormType }) => {
       <div className="flex flex-col gap-6 card py-14 px-10">
         <div className="flex flex-row gap-2 justify-center">
           <Image src="/logosvg.png" alt="logo" height={32} width={38} />
-          <h2 className="text-primary-100">Prepify</h2>
+          <h2 className="text-white-100">Prepify</h2>
         </div>
 
         <h3>Practice job interviews with Prepify AI</h3>
