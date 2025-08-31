@@ -1,21 +1,28 @@
+import { redirect } from "next/navigation";
 import Agent from "@/components/Agent";
 import { getCurrentUser } from "@/lib/actions/auth.action";
 
 const Page = async () => {
-  const user = await getCurrentUser();
+    const user = await getCurrentUser();
 
-  return (
-    <>
-      <h3>Interview generation</h3>
+    if (!user) {
+        redirect("/login");
+    }
 
-      <Agent
-        userName={user?.name!}
-        userId={user?.id}
-        profileImage={user?.profileURL}
-        type="generate"
-      />
-    </>
-  );
+    // Replace with actual interviewId or get from somewhere
+    const interviewId = "your-interview-id";
+
+    return (
+        <>
+            <Agent
+                userName={typeof user.name === "string" ? user.name : ""}
+                userId={user.id}
+                profileImage={typeof user.profileURL === "string" ? user.profileURL : undefined}
+                type="generate"
+                interviewId={interviewId}
+            />
+        </>
+    );
 };
 
 export default Page;
